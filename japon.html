@@ -2,186 +2,114 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Japon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <title>Japon</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #fdfcfb, #e2d1c3);
-      animation: gradient 15s ease infinite;
-      color: #2c2c2c;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden; /* empêche les débordements sur mobile */
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      background: #f3e9e1;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
-      font-size: 48px;
-      color: #b71c1c;
-      margin: 60px 20px 30px;
-      position: relative;
+      color: #b61919;
+      font-size: 3rem;
+      margin-top: 40px;
     }
 
-    h1::after {
-      content: "";
+    .underline {
       width: 80px;
       height: 4px;
-      background-color: #b71c1c;
-      display: block;
-      margin: 14px auto 0;
+      background-color: #b61919;
+      margin: 10px auto 30px;
       border-radius: 2px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 1100px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
     .carre {
-      display: flex;
-      flex-direction: column;
-      background-color: white;
+      background: white;
       border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-      font-weight: 500;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.3s ease, color 0.2s ease;
+      padding: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
     }
 
     .carre:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-      color: #0077cc;
+      transform: translateY(-5px);
     }
 
     .carre img {
       width: 100%;
       height: auto;
-      max-height: 150px;
+      max-height: 160px;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      margin-bottom: 10px;
     }
 
-    .carre:hover img {
-      transform: scale(1.05);
+    .carre h2 {
+      font-size: 1.2rem;
+      color: #333;
     }
 
-    .carre span {
-      display: block;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-      background-color: #fff;
-    }
-
-    .back-container {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      background-color: #d32f2f;
+    .btn-retour {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 15px 30px;
+      font-size: 1rem;
       color: white;
-      font-size: 16px;
-      font-weight: 500;
-      border-radius: 30px;
+      background-color: #d32f2f;
+      border: none;
+      border-radius: 50px;
       text-decoration: none;
-      box-shadow: 0 6px 18px rgba(211, 47, 47, 0.3);
-      transition: all 0.3s ease;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
     }
 
-    .back-link:hover {
-      background-color: #a31515;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(183, 28, 28, 0.4);
-    }
-
-    .back-link svg {
-      width: 18px;
-      height: 18px;
-      fill: white;
-      transform: rotate(180deg);
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 36px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .back-link {
-        padding: 12px 20px;
-        font-size: 15px;
-      }
+    .btn-retour:hover {
+      background-color: #b71c1c;
     }
   </style>
 </head>
 <body>
 
   <h1>Japon</h1>
+  <div class="underline"></div>
 
-  <main class="grid">
-    <a href="chercheur-japon.html" class="carre">
-      <img src="images/chercheur.jpg" alt="Chercheur">
-      <span>Chercheur</span>
-    </a>
-
-    <a href="etudiant-japon.html" class="carre">
-      <img src="images/etudiant.jpg" alt="Étudiant">
-      <span>Étudiant</span>
-    </a>
-
-    <a href="musee-japon.html" class="carre">
-      <img src="images/musee.jpg" alt="Musée">
-      <span>Musée</span>
-    </a>
-
-    <a href="association-japon.html" class="carre">
-      <img src="images/association.jpg" alt="Association">
-      <span>Association</span>
-    </a>
-
-    <a href="#" class="carre">
-      <img src="images/culture.jpg" alt="Culture">
-      <span>Culture</span>
-    </a>
-  </main>
-
-  <div class="back-container">
-    <a href="index.html" class="back-link">
-      <svg viewBox="0 0 20 20"><path d="M10 1l-9 9 9 9 1-1-8-8 8-8-1-1z"/></svg>
-      Retour à l'accueil
-    </a>
+  <div class="grid">
+    <div class="carre">
+      <img src="chercheur.png" alt="Chercheur">
+      <h2>Chercheur</h2>
+    </div>
+    <div class="carre">
+      <img src="etudiant.png" alt="Étudiant">
+      <h2>Étudiant</h2>
+    </div>
+    <div class="carre">
+      <img src="musee.png" alt="Musée">
+      <h2>Musée</h2>
+    </div>
+    <div class="carre">
+      <img src="association.png" alt="Association">
+      <h2>Association</h2>
+    </div>
+    <div class="carre">
+      <img src="culture.png" alt="Culture">
+      <h2>Culture</h2>
+    </div>
   </div>
+
+  <a href="index.html" class="btn-retour">⟶ Retour à l'accueil</a>
 
 </body>
 </html>
