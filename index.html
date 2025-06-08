@@ -3,164 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <title>Anthropologie</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      text-align: center;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #e3f8ff, #ffffff);
-      color: #333;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #f0f4ff, #e0f7fa, #fce4ec, #f0f4ff);
+      background-size: 400% 400%;
+      animation: fondAnime 20s ease infinite;
+    }
+
+    @keyframes fondAnime {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 24px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     h1 {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 38px;
-      background-color: #0099ff;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 40px;
       display: inline-block;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background: linear-gradient(to right, #00bcd4, #0077cc);
+      color: white;
+      padding: 16px 60px;
+      border-radius: 50px;
+      font-size: 38px;
+      font-weight: 700;
+      margin: 20px auto 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    h1:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 .material-icons {
+      vertical-align: middle;
+      margin-right: 12px;
+      font-size: 36px;
     }
 
     .intro {
-      text-align: center;
       font-size: 18px;
+      color: #444;
       max-width: 800px;
-      margin: 20px auto;
-      padding: 0 20px;
-      color: #555;
+      margin: 0 auto 40px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px 30px;
+      border-left: 6px solid #00bcd4;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 30px;
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 40px;
+      justify-content: center;
+      padding: 40px;
     }
 
     .carre {
-      background-color: white;
+      position: relative;
+      width: 220px;
+      height: 220px;
+      display: block;
+      border: 2px solid rgba(0, 0, 0, 0.1);
       border-radius: 20px;
       overflow: hidden;
-      text-align: center;
       text-decoration: none;
-      color: #222;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.6s ease forwards;
-    }
-
-    .carre:nth-child(1) { animation-delay: 0.1s; }
-    .carre:nth-child(2) { animation-delay: 0.2s; }
-    .carre:nth-child(3) { animation-delay: 0.3s; }
-    .carre:nth-child(4) { animation-delay: 0.4s; }
-    .carre:nth-child(5) { animation-delay: 0.5s; }
-    .carre:nth-child(6) { animation-delay: 0.6s; }
-
-    .carre:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
     .carre img {
       width: 100%;
-      height: 140px;
+      height: 100%;
       object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .carre span {
-      display: block;
-      padding: 16px;
-      font-size: 18px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      pointer-events: none;
+      text-align: center;
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .carre:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      border-color: #00bcd4;
     }
 
     .back-link {
-      display: block;
-      width: fit-content;
-      margin: 30px auto 10px;
-      background-color: #0077cc;
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 12px 24px;
+      background: #0077cc;
       color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
+      border-radius: 30px;
       text-decoration: none;
-      font-size: 16px;
-      transition: background-color 0.2s ease;
+      font-weight: 500;
+      box-shadow: 0 6px 18px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     .back-link:hover {
       background-color: #005fa3;
+      transform: translateY(-2px);
     }
 
     footer {
-      text-align: center;
+      margin-top: 60px;
       padding: 20px;
       font-size: 14px;
-      color: #777;
-      margin-top: 40px;
-      border-top: 1px solid #ddd;
+      color: #666;
+      text-align: center;
+    }
+
+    footer .tampon {
+      display: inline-block;
+      border: 2px dashed #0077cc;
+      padding: 10px 20px;
+      border-radius: 12px;
+      background: #e3f2fd;
+      font-family: 'Courier New', Courier, monospace;
+      transform: rotate(-1.5deg);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
 
-  <h1>Anthropologie</h1>
+  <div class="page-wrapper">
+    <h1><span class="material-icons">explore</span>Anthropologie</h1>
 
-  <p class="intro">
-    Découvrez les approches anthropologiques dans différents pays. Cliquez sur un pays pour explorer ses chercheurs, institutions, et traditions culturelles.
-  </p>
+    <p class="intro">
+      Découvrez les approches anthropologiques dans différents pays. Cliquez sur un pays pour explorer ses chercheurs, institutions, et traditions culturelles.
+    </p>
 
-  <div class="grid">
-    <a href="japon.html" class="carre">
-      <img src="japon.jpg" alt="Japon">
-      <span>Japon</span>
-    </a>
+    <div class="grid">
+      <a href="japon.html" class="carre">
+        <img src="japon.jpg" alt="Japon">
+        <span>Japon</span>
+      </a>
 
-    <a href="france.html" class="carre">
-      <img src="france.jpg" alt="France">
-      <span>France</span>
-    </a>
+      <a href="france.html" class="carre">
+        <img src="france.jpg" alt="France">
+        <span>France</span>
+      </a>
 
-    <a href="philippines.html" class="carre">
-      <img src="philippines.jpg" alt="Philippines">
-      <span>Philippines</span>
-    </a>
+      <a href="philippines.html" class="carre">
+        <img src="philippines.jpg" alt="Philippines">
+        <span>Philippines</span>
+      </a>
 
-    <a href="singapour.html" class="carre">
-      <img src="singapour.jpg" alt="Singapour">
-      <span>Singapour</span>
-    </a>
+      <a href="singapour.html" class="carre">
+        <img src="singapour.jpg" alt="Singapour">
+        <span>Singapour</span>
+      </a>
 
-    <a href="thailande.html" class="carre">
-      <img src="thailande.jpg" alt="Thaïlande">
-      <span>Thaïlande</span>
-    </a>
+      <a href="thailande.html" class="carre">
+        <img src="thailande.jpg" alt="Thaïlande">
+        <span>Thaïlande</span>
+      </a>
 
-    <a href="vietnam.html" class="carre">
-      <img src="vietnam.jpg" alt="Vietnam">
-      <span>Vietnam</span>
-    </a>
+      <a href="vietnam.html" class="carre">
+        <img src="vietnam.jpg" alt="Vietnam">
+        <span>Vietnam</span>
+      </a>
+    </div>
+
+    <a href="index.html" class="back-link">← Retour à l'accueil</a>
+
+    <footer>
+      <div class="tampon">© 2025 – Projet d’anthropologie | Lucas Ledy</div>
+    </footer>
   </div>
-
-  <a href="index.html" class="back-link">← Retour à l'accueil</a>
-
-  <footer>
-    © 2025 – Projet d’anthropologie | Lucas Ledy
-  </footer>
 
 </body>
 </html>

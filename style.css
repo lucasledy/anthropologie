@@ -1,12 +1,15 @@
-/* Fond animé */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Fond animé doux et immersif */
 body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #f0f4ff, #e0f7fa, #fce4ec, #f0f4ff);
-  background-size: 400% 400%;
-  animation: fondAnime 20s ease infinite;
+  background: linear-gradient(-45deg, #dbeafe, #e0f7fa, #fef6e4, #e8eaf6);
+  background-size: 500% 500%;
+  animation: fondAnime 25s ease-in-out infinite;
+  color: #333;
 }
 
 @keyframes fondAnime {
@@ -15,37 +18,51 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Titre principal */
 h1 {
   display: inline-block;
-  background-color: #0077cc;
+  background: linear-gradient(to right, #0099cc, #00bcd4);
   color: white;
-  padding: 10px 40px;
+  padding: 16px 60px;
   border-radius: 50px;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 30px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 42px;
+  font-weight: 700;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+h1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Grille fluide et adaptative */
 .grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
-  padding: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* Cartes : effet "flottant", voyage, chaleur humaine */
 .carre {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   display: block;
-  border: 3px solid black;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  background-color: white;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: none;
 }
 
 .carre img {
@@ -54,6 +71,8 @@ h1 {
   object-fit: cover;
   object-position: center;
   display: block;
+  filter: brightness(0.9) contrast(1.05);
+  transition: filter 0.3s ease;
 }
 
 .carre span {
@@ -62,13 +81,48 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 22px;
-  font-weight: 600;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
   pointer-events: none;
+  text-align: center;
+  z-index: 2;
 }
 
 .carre:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+}
+
+.carre:hover img {
+  filter: brightness(1) contrast(1.1);
+}
+
+/* Lien retour */
+.back-link {
+  display: inline-block;
+  margin: 50px auto 20px;
+  padding: 12px 28px;
+  background: #00bcd4;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0, 188, 212, 0.4);
+}
+
+.back-link:hover {
+  background-color: #0097a7;
+  transform: translateY(-2px);
+}
+
+/* Footer simple et élégant */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  opacity: 0.8;
 }
