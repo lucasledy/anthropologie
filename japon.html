@@ -1,211 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
-    /* Base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #fdfcfb, #e2d1c3);
-      animation: gradient 15s ease infinite;
-      color: #2c2c2c;
-      min-height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #f5f0eb, #ecdcd0);
       display: flex;
       flex-direction: column;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      align-items: center;
     }
 
     h1 {
+      color: #b30000;
       text-align: center;
-      font-size: 48px;
-      color: #b71c1c;
-      margin: 60px 20px 30px;
-      position: relative;
+      font-size: 2.8rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
     }
 
-    h1::after {
-      content: "";
-      width: 80px;
-      height: 4px;
-      background-color: #b71c1c;
-      display: block;
-      margin: 14px auto 0;
-      border-radius: 2px;
+    hr {
+      width: 60px;
+      border: 2px solid #b30000;
+      margin-bottom: 2rem;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 30px 40px;
-    }
-
-    .carre {
-      display: block;
-      background-color: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-      text-decoration: none;
-      color: #333;
-      text-align: center;
-      font-size: 18px;
-      font-weight: 500;
-      padding: 50px 20px;
-      transition: transform 0.2s ease, box-shadow 0.3s ease, color 0.2s ease;
-    }
-
-    .carre:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-      color: #0077cc;
-    }
-
-    .carre img {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      max-width: 1000px;
       width: 100%;
-      height: 180px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
+      box-sizing: border-box;
+      justify-items: center;
     }
 
-    .carre:hover img {
-      transform: scale(1.05);
-    }
-
-    .carre span {
-      display: block;
-      padding: 18px;
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      background-color: #fff;
-    }
-
-    .back-container {
-      text-align: center;
-      margin-top: 40px;
-      margin-bottom: 60px;
-    }
-
-    .back-link {
-      display: inline-flex;
+    .card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 220px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      background-color: #d32f2f;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 35px;
+      height: 35px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .button-container {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .back-button {
+      background-color: #c62828;
       color: white;
-      font-size: 16px;
-      font-weight: 500;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(211, 47, 47, 0.3);
-      transition: all 0.3s ease;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .back-link:hover {
-      background-color: #a31515;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(183, 28, 28, 0.4);
+    .back-button:hover {
+      background-color: #b71c1c;
     }
 
-    .back-link svg {
-      width: 18px;
-      height: 18px;
-      fill: white;
-      transform: rotate(180deg);
-    }
-
-    /* MOBILE OPTIMIZATION */
     @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-        margin: 40px 10px 10px;
-      }
-
-      .carre {
-        padding: 20px 10px;
-        font-size: 14px;
-      }
-
-      .carre img {
-        height: 120px;
-      }
-
-      .carre span {
-        font-size: 14px;
-        padding: 12px;
-      }
-
       .grid {
-        gap: 20px;
-        padding: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
       }
 
-      .back-container {
-        margin-top: 30px;
-        margin-bottom: 40px;
+      .card {
+        height: 100px;
+        max-width: 160px;
+        padding: 0.5rem;
       }
 
-      .back-link {
-        padding: 10px 20px;
-        font-size: 14px;
+      .card img {
+        width: 25px;
+        height: 25px;
+      }
+
+      .card-title {
+        font-size: 0.9rem;
+      }
+
+      .back-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-
   <h1>Japon</h1>
-
-  <main class="grid">
-    <a href="chercheur-japon.html" class="carre">
-      <img src="images/chercheur.jpg" alt="Chercheur">
-      <span>Chercheur</span>
-    </a>
-
-    <a href="etudiant-japon.html" class="carre">
-      <img src="images/etudiant.jpg" alt="Étudiant">
-      <span>Étudiant</span>
-    </a>
-
-    <a href="musee-japon.html" class="carre">
-      <img src="images/musee.jpg" alt="Musée">
-      <span>Musée</span>
-    </a>
-
-    <a href="association-japon.html" class="carre">
-      <img src="images/association.jpg" alt="Association">
-      <span>Association</span>
-    </a>
-
-    <a href="#" class="carre">
-      <img src="images/culture.jpg" alt="Culture">
-      <span>Culture</span>
-    </a>
-  </main>
-
-  <div class="back-container">
-    <a href="index.html" class="back-link">
-      <svg viewBox="0 0 20 20"><path d="M10 1l-9 9 9 9 1-1-8-8 8-8-1-1z"/></svg>
-      Retour à l'accueil
-    </a>
+  <hr />
+  <div class="grid">
+    <div class="card">
+      <img src="chercheur.png" alt="Chercheur">
+      <div class="card-title">Chercheur</div>
+    </div>
+    <div class="card">
+      <img src="etudiant.png" alt="Étudiant">
+      <div class="card-title">Étudiant</div>
+    </div>
+    <div class="card">
+      <img src="musee.png" alt="Musée">
+      <div class="card-title">Musée</div>
+    </div>
+    <div class="card">
+      <img src="association.png" alt="Association">
+      <div class="card-title">Association</div>
+    </div>
+    <div class="card">
+      <img src="culture.png" alt="Culture">
+      <div class="card-title">Culture</div>
+    </div>
   </div>
 
+  <div class="button-container">
+    <button class="back-button" onclick="window.location.href='index.html'">➤ Retour à l'accueil</button>
+  </div>
 </body>
 </html>
