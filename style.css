@@ -1,0 +1,74 @@
+/* Fond animé */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #f0f4ff, #e0f7fa, #fce4ec, #f0f4ff);
+  background-size: 400% 400%;
+  animation: fondAnime 20s ease infinite;
+}
+
+@keyframes fondAnime {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  display: inline-block;
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 50px;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.carre {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: block;
+  border: 3px solid black;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: white;
+}
+
+.carre img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.carre span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.carre:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
