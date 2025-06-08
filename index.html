@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Anthropologie</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style>
+    /* Fond animé pastel */
     body {
       font-family: 'Poppins', sans-serif;
       text-align: center;
@@ -22,6 +23,7 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* Conteneur principal */
     .page-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -30,9 +32,9 @@
       border-radius: 24px;
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
+    /* Titre principal */
     h1 {
       display: inline-block;
       background: linear-gradient(to right, #00bcd4, #0077cc);
@@ -57,6 +59,7 @@
       font-size: 36px;
     }
 
+    /* Intro texte */
     .intro {
       font-size: 18px;
       color: #444;
@@ -69,6 +72,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
+    /* Grille de pays */
     .grid {
       display: flex;
       flex-wrap: wrap;
@@ -119,6 +123,7 @@
       border-color: #00bcd4;
     }
 
+    /* Bouton retour */
     .back-link {
       display: inline-block;
       margin: 40px auto 0;
@@ -137,23 +142,17 @@
       transform: translateY(-2px);
     }
 
+    /* Footer propre */
     footer {
       margin-top: 60px;
-      padding: 20px;
+      padding: 30px 20px;
       font-size: 14px;
-      color: #666;
+      color: #555;
       text-align: center;
-    }
-
-    footer .tampon {
-      display: inline-block;
-      border: 2px dashed #0077cc;
-      padding: 10px 20px;
-      border-radius: 12px;
-      background: #e3f2fd;
-      font-family: 'Courier New', Courier, monospace;
-      transform: rotate(-1.5deg);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: transparent;
+      font-weight: 500;
+      opacity: 0.8;
+      font-style: italic;
     }
   </style>
 </head>
@@ -201,7 +200,7 @@
     <a href="index.html" class="back-link">← Retour à l'accueil</a>
 
     <footer>
-      <div class="tampon">© 2025 – Projet d’anthropologie | Lucas Ledy Justine Bartot Ambre </div>
+      © 2025 – Projet d’anthropologie • Lucas Ledy, Justine Bartot & Ambre
     </footer>
   </div>
 
