@@ -3,17 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <title>France</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f0f4f8, #ffffff);
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 42px;
+      color: #1a1a1a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 40px;
+    }
+
+    .carre {
+      display: block;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .carre:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .carre img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .carre:hover img {
+      transform: scale(1.05);
+    }
+
+    .carre span {
+      display: block;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 40px auto;
+      background-color: #0077cc;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #005fa3;
+      box-shadow: 0 6px 18px rgba(0, 95, 163, 0.4);
+    }
+
+    .back-link svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    .back-container {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+
   <h1>France</h1>
+
   <div class="grid">
-    <a href="../details/chercheur-france.html" class="carre">Chercheur</a>
-    <a href="../details/etudiant-france.html" class="carre">Étudiant</a>
-    <a href="../details/musee-france.html" class="carre">Musée</a>
-    <a href="../details/association-france.html" class="carre">Association</a>
-    <a href="#" class="carre">Culture</a>
+    <a href="chercheur-france.html" class="carre">
+      <img src="images/chercheur.jpg" alt="Chercheur">
+      <span>Chercheur</span>
+    </a>
+
+    <a href="etudiant-france.html" class="carre">
+      <img src="images/etudiant.jpg" alt="Étudiant">
+      <span>Étudiant</span>
+    </a>
+
+    <a href="musee-france.html" class="carre">
+      <img src="images/musee.jpg" alt="Musée">
+      <span>Musée</span>
+    </a>
+
+    <a href="association-france.html" class="carre">
+      <img src="images/association.jpg" alt="Association">
+      <span>Association</span>
+    </a>
+
+    <a href="#" class="carre">
+      <img src="images/culture.jpg" alt="Culture">
+      <span>Culture</span>
+    </a>
   </div>
-  <a href="../index.html">← Retour</a>
+
+  <div class="back-container">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 20 20"><path d="M10 1l-9 9 9 9 1-1-8-8 8-8-1-1z"/></svg>
+      Retour à l'accueil
+    </a>
+  </div>
+
 </body>
 </html>
