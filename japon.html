@@ -7,23 +7,23 @@
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #fcebe3, #f3e9e1);
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #f9f4f1, #efe5dd);
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
 
     h1 {
       color: #b71c1c;
-      font-size: 3rem;
+      font-size: 2.8rem;
       margin-bottom: 0.5rem;
     }
 
     .underline {
-      width: 80px;
+      width: 70px;
       height: 4px;
       background-color: #b71c1c;
       margin-bottom: 2rem;
@@ -33,71 +33,77 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5rem;
-      width: 100%;
+      gap: 1.2rem;
       max-width: 1000px;
-      margin-bottom: 2rem;
+      width: 100%;
     }
 
-    .carre {
+    .card {
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
       text-align: center;
-      padding: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
     }
 
-    .carre img {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 0.5rem;
-      border-radius: 10px;
-      object-fit: cover;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .carre:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    .card img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      margin-bottom: 0.7rem;
     }
 
-    .carre p {
-      margin: 0;
+    .card p {
       font-weight: bold;
+      font-size: 1.05rem;
       color: #333;
-      font-size: 1.1rem;
+      margin: 0;
     }
 
     .btn-retour {
+      margin-top: 2rem;
       background-color: #d32f2f;
       color: white;
       padding: 0.9rem 2rem;
       border: none;
-      border-radius: 50px;
-      text-decoration: none;
+      border-radius: 40px;
       font-weight: bold;
       font-size: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
       transition: background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .btn-retour:hover {
       background-color: #b71c1c;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2.2rem;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .card {
+        padding: 1rem;
+      }
+
+      .card img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .btn-retour {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.8rem;
       }
     }
   </style>
@@ -108,29 +114,29 @@
   <div class="underline"></div>
 
   <div class="grid">
-    <div class="carre">
-      <img src="img/chercheur.png" alt="Chercheur">
+    <div class="card">
+      <img src="img/chercheur.png" alt="Chercheur" />
       <p>Chercheur</p>
     </div>
-    <div class="carre">
-      <img src="img/etudiant.png" alt="Étudiant">
+    <div class="card">
+      <img src="img/etudiant.png" alt="Étudiant" />
       <p>Étudiant</p>
     </div>
-    <div class="carre">
-      <img src="img/musee.png" alt="Musée">
+    <div class="card">
+      <img src="img/musee.png" alt="Musée" />
       <p>Musée</p>
     </div>
-    <div class="carre">
-      <img src="img/association.png" alt="Association">
+    <div class="card">
+      <img src="img/association.png" alt="Association" />
       <p>Association</p>
     </div>
-    <div class="carre">
-      <img src="img/culture.png" alt="Culture">
+    <div class="card">
+      <img src="img/culture.png" alt="Culture" />
       <p>Culture</p>
     </div>
   </div>
 
-  <a href="index.html" class="btn-retour">⬅️ Retour à l'accueil</a>
+  <a href="index.html" class="btn-retour">⬅ Retour à l'accueil</a>
 
 </body>
 </html>
