@@ -4,106 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(120deg, #f9f4f1, #efe5dd);
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #fdfcfb, #e2d1c3);
+      color: #2c2c2c;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      padding: 2rem 1rem;
     }
 
     h1 {
+      text-align: center;
+      font-size: 48px;
       color: #b71c1c;
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+      margin: 60px 20px 10px;
     }
 
-    .underline {
-      width: 70px;
+    h1::after {
+      content: "";
+      width: 80px;
       height: 4px;
       background-color: #b71c1c;
-      margin-bottom: 2rem;
+      display: block;
+      margin: 14px auto 0;
       border-radius: 2px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
       width: 100%;
+      padding: 30px 40px;
     }
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-      text-align: center;
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .card img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      margin-bottom: 0.7rem;
-    }
-
-    .card p {
-      font-weight: bold;
-      font-size: 1.05rem;
+    .carre {
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
       color: #333;
-      margin: 0;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 50px 20px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, color 0.2s ease;
     }
 
-    .btn-retour {
-      margin-top: 2rem;
+    .carre:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      color: #0077cc;
+    }
+
+    .carre img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .carre:hover img {
+      transform: scale(1.05);
+    }
+
+    .carre span {
+      display: block;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      background-color: #fff;
+    }
+
+    .back-container {
+      text-align: center;
+      margin: 40px 0 60px;
+    }
+
+    .back-link {
+      display: inline-block;
       background-color: #d32f2f;
       color: white;
-      padding: 0.9rem 2rem;
-      border: none;
+      padding: 14px 30px;
       border-radius: 40px;
-      font-weight: bold;
-      font-size: 1rem;
+      font-size: 16px;
+      font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 6px 18px rgba(211, 47, 47, 0.3);
     }
 
-    .btn-retour:hover {
-      background-color: #b71c1c;
+    .back-link:hover {
+      background-color: #a31515;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(183, 28, 28, 0.4);
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 768px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 36px;
       }
 
-      .card {
-        padding: 1rem;
+      .carre span {
+        font-size: 16px;
       }
 
-      .card img {
-        width: 40px;
-        height: 40px;
+      .grid {
+        padding: 20px;
       }
+    }
 
-      .btn-retour {
-        font-size: 0.95rem;
-        padding: 0.8rem 1.8rem;
+    @media (max-width: 480px) {
+      .back-link {
+        padding: 12px 24px;
+        font-size: 15px;
       }
     }
   </style>
@@ -111,32 +136,37 @@
 <body>
 
   <h1>Japon</h1>
-  <div class="underline"></div>
 
-  <div class="grid">
-    <div class="card">
-      <img src="img/chercheur.png" alt="Chercheur" />
-      <p>Chercheur</p>
-    </div>
-    <div class="card">
-      <img src="img/etudiant.png" alt="Étudiant" />
-      <p>Étudiant</p>
-    </div>
-    <div class="card">
-      <img src="img/musee.png" alt="Musée" />
-      <p>Musée</p>
-    </div>
-    <div class="card">
-      <img src="img/association.png" alt="Association" />
-      <p>Association</p>
-    </div>
-    <div class="card">
-      <img src="img/culture.png" alt="Culture" />
-      <p>Culture</p>
-    </div>
+  <main class="grid">
+    <a href="chercheur-japon.html" class="carre">
+      <img src="images/chercheur.jpg" alt="Chercheur">
+      <span>Chercheur</span>
+    </a>
+
+    <a href="etudiant-japon.html" class="carre">
+      <img src="images/etudiant.jpg" alt="Étudiant">
+      <span>Étudiant</span>
+    </a>
+
+    <a href="musee-japon.html" class="carre">
+      <img src="images/musee.jpg" alt="Musée">
+      <span>Musée</span>
+    </a>
+
+    <a href="association-japon.html" class="carre">
+      <img src="images/association.jpg" alt="Association">
+      <span>Association</span>
+    </a>
+
+    <a href="#" class="carre">
+      <img src="images/culture.jpg" alt="Culture">
+      <span>Culture</span>
+    </a>
+  </main>
+
+  <div class="back-container">
+    <a href="index.html" class="back-link">⬅ Retour à l'accueil</a>
   </div>
-
-  <a href="index.html" class="btn-retour">⬅ Retour à l'accueil</a>
 
 </body>
 </html>
