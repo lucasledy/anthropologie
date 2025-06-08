@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -15,17 +16,22 @@
     }
 
     h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
       color: #b30000;
+      margin-top: 2.5rem;
+      position: relative;
       text-align: center;
-      font-size: 2.8rem;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
     }
 
-    hr {
+    h1::after {
+      content: "";
+      display: block;
+      height: 4px;
       width: 60px;
-      border: 2px solid #b30000;
-      margin-bottom: 2rem;
+      background-color: #b30000;
+      margin: 0.5rem auto 1.5rem auto;
+      border-radius: 2px;
     }
 
     .grid {
@@ -95,6 +101,10 @@
     }
 
     @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
       .grid {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -125,7 +135,7 @@
 </head>
 <body>
   <h1>Japon</h1>
-  <hr />
+
   <div class="grid">
     <div class="card">
       <img src="chercheur.png" alt="Chercheur">
