@@ -1,17 +1,13 @@
 backend:
   name: git-gateway
   branch: main
+  identity_url: "https://anthropologieconnect.netlify.app/.netlify/identity"  # 🔧 Ajouté ici
 
 media_folder: "images"
 public_folder: "/images"
 
-# ➕ Active l'inscription
 site_url: "https://anthropologieconnect.netlify.app"
-logo_url: "/images/logo.png"  # optionnel si tu as un logo
-
-# ➕ Active l'inscription via l’interface
-identity:
-  allow_signup: true
+logo_url: "/images/logo.png"  # optionnel
 
 collections:
   - name: "pages_details"
