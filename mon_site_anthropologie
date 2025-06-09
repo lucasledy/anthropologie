@@ -1,0 +1,25 @@
+/anthropologie-site
+│
+├── index.html              ← Page d'accueil (carte interactive)
+├── style.css               ← Feuille de style globale
+├── script.js               ← Script JS (ex: redirection pays)
+├── netlify.toml            ← Configuration pour le déploiement Netlify
+│
+├── /pages                  ← Pages générales par pays
+│   ├── japon.html
+│   ├── vietnam.html
+│   ├── thailande.html
+│   ├── singapour.html
+│   ├── philippines.html
+│   └── palestine.html
+│
+├── /details                ← Pages éditables par Netlify CMS
+│   ├── chercheur-japon.html
+│   ├── etudiant-japon.html
+│   ├── musee-japon.html
+│   ├── chercheur-vietnam.html
+│   └── etc...
+│
+└── /admin                  ← Interface de Netlify CMS
+    ├── config.yml          ← Configuration CMS (collections, fichiers, etc.)
+    └── index2.html          ← Fichier pour charger Netlify CMS

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Chercheur - Japon</title>
+  <title>Chercheur - Japon (Éditable)</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -52,6 +52,31 @@
     li::marker {
       color: #0077cc;
     }
+
+    #edit-btn, #save-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+    }
+
+    #edit-btn {
+      background-color: #0077cc;
+      color: white;
+    }
+
+    #save-btn {
+      background-color: #28a745;
+      color: white;
+      display: none;
+    }
+
+    [contenteditable="true"] {
+      outline: 2px dashed #0077cc;
+      background-color: #f0f8ff;
+    }
   </style>
 </head>
 <body>
@@ -60,7 +85,7 @@
     <h1>Chercheurs au Japon</h1>
 
     <!-- ✅ Début du bloc modifiable -->
-    <div id="cms-content">
+    <div id="cms-content" contenteditable="false">
       <section>
         <h2>Présentation générale</h2>
         <p>Texte d’introduction sur les chercheurs en anthropologie au Japon...</p>
@@ -82,9 +107,35 @@
     </div>
     <!-- ✅ Fin du bloc modifiable -->
 
+    <button id="edit-btn">✏️ Modifier</button>
+    <button id="save-btn">💾 Sauvegarder</button>
   </main>
 
-  <!-- ✅ Script Netlify CMS Preview -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    const editBtn = document.getElementById("edit-btn");
+    const saveBtn = document.getElementById("save-btn");
+    const content = document.getElementById("cms-content");
+
+    editBtn.addEventListener("click", () => {
+      content.contentEditable = true;
+      content.focus();
+      editBtn.style.display = "none";
+      saveBtn.style.display = "inline-block";
+    });
+
+    saveBtn.addEventListener("click", () => {
+      content.contentEditable = false;
+      localStorage.setItem("savedContent", content.innerHTML);
+      editBtn.style.display = "inline-block";
+      saveBtn.style.display = "none";
+      alert("Modifications enregistrées localement !");
+    });
+
+    // Charger contenu sauvegardé
+    const saved = localStorage.getItem("savedContent");
+    if (saved) {
+      content.innerHTML = saved;
+    }
+  </script>
 </body>
 </html>
