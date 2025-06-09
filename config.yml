@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages_details"
+    label: "Pages par rôle"
+    files:
+      - label: "Chercheur Japon"
+        name: "chercheur-japon"
+        file: "details/chercheur-japon.html"
+        fields:
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+      - label: "Étudiant Japon"
+        name: "etudiant-japon"
+        file: "details/etudiant-japon.html"
+        fields:
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+      - label: "Musée Japon"
+        name: "musee-japon"
+        file: "details/musee-japon.html"
+        fields:
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+      - label: "Chercheur Vietnam"
+        name: "chercheur-vietnam"
+        file: "details/chercheur-vietnam.html"
+        fields:
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+      # ➕ Tu peux continuer à ajouter les autres fichiers ici
