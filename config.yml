@@ -5,6 +5,14 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
+# ➕ Active l'inscription
+site_url: "https://anthropologieconnect.netlify.app"
+logo_url: "/images/logo.png"  # optionnel si tu as un logo
+
+# ➕ Active l'inscription via l’interface
+identity:
+  allow_signup: true
+
 collections:
   - name: "pages_details"
     label: "Pages par rôle"
@@ -32,5 +40,3 @@ collections:
         file: "details/chercheur-vietnam.html"
         fields:
           - { label: "Contenu", name: "body", widget: "markdown" }
-
-      # ➕ Tu peux continuer à ajouter les autres fichiers ici
